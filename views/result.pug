@@ -1,0 +1,15 @@
+extends layout
+block content
+  script(src='https://cdn.jsdelivr.net/npm/chart.js')
+  script(src='/scripts/chartjs-plugin-annotation/dist/chartjs-plugin-annotation.min.js')
+  h3 #{title}
+  p 현재가격 : $#{currentprice} | 현재 DrawDown : #{currentdd}%
+  p 최고점대비 최대손실: (MDD) : #{min}% | MDD Date : #{mddDate}
+  p 목표가 : $#{avePrice}
+  div
+    canvas#myChart
+  script(typte='text/javascript').
+    var stock = '#{title}';
+    var average = #{average};
+    var chartdata = '#{JSON.stringify(data)}';
+  script(src='../javascripts/chart.js')
