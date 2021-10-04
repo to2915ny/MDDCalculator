@@ -4,6 +4,8 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/index.css')
   body
-    form(action='/search' method = 'GET')
-      input(type='text' placeholder='Search...' name= 'search')
-      button(type='submit')
+    form( action='/search' method = 'GET' role='search')
+      label(for='search') Search for stuff
+      input#search(type='search' placeholder='Enter Ticker' name = 'search' autofocus='' required='')
+      
+
